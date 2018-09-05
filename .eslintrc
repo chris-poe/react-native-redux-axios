@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "rules": {
+    // disable mandatory .jsx
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    // disable prop-type validation
+    "react/prop-types": 0
+  },
+  "globals": {
+    "__DEV__": true,
+    "navigator": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "react-native-mobx-axios",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "husky": "^0.14.3",
+    "jest-expo": "~27.0.0",
+    "lint-staged": "^7.1.2",
+    "prettier": "^1.13.3",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "clean": "watchman watch-del-all && rm -rf node_modules/ && npm install",
+    "clean:yarn": "yarn cache clean",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest",
+    "lint": "eslint 'src/'",
+    "lint:fix": "eslint --fix 'src/'",
+    "format": "prettier --write 'src/**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "expo": "^27.0.1",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+    "react-native-animatable": "^1.3.0",
+    "react-native-platform-touchable": "^1.1.1",
+    "react-navigation": "^2.3.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-axios-middleware": "^4.0.0",
+    "redux-logger": "^3.0.6"
+  }
+}
