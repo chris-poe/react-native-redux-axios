@@ -1,6 +1,6 @@
 {
   "expo": {
-  	"entryPoint": "./src/App.js",
+  	"entryPoint": "./src/index.js",
     "icon": "./src/assets/images/app-icon.png",
     "sdkVersion": "27.0.0",
     "orientation": "portrait"
