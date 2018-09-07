@@ -10,11 +10,10 @@ import reducer from '../reducers';
 const client = axios.create(config.api);
 
 const getMiddleware = () => {
-	if (process.env.NODE_ENV === 'production') {
-		return applyMiddleware(axiosMiddleware(client), thunk);
-	} 
-		return applyMiddleware(axiosMiddleware(client), thunk, logger);
-	
+  if (process.env.NODE_ENV === 'production') {
+    return applyMiddleware(axiosMiddleware(client), thunk);
+  }
+  return applyMiddleware(axiosMiddleware(client), thunk, logger);
 };
 
 export default createStore(reducer, getMiddleware());
