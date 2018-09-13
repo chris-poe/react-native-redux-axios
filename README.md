@@ -120,18 +120,29 @@ Sets input and keyboard type.
 
 ## Layout Modules
 
-### Container
+### `<Button>`
 
-Extendable view container
+#### Props
 
-### SafeAreaView
+| Prop | Type | Default | Note |
+|---|---|---|---|
+| `text` | `string` | `null` | Sets inner text value of button (defaults to uppercase).
+| `disabled` | `boolean` | `false` | Used to disable button. Useful in conjunction with promise based actions.
+| `loading` | `boolean` | `false` | Shows a loading indicator. Useful in conjunction with promise based actions.
+| `rounded` | `boolean` | `false` | Sets a default border radius (defaults to `5px`).
+
+### `<Container>`
+
+An extendable view container.
+
+### `<SafeAreaView>`
 
 The purpose of SafeAreaView is to render content within the safe area boundaries of a device (Reference [here](https://facebook.github.io/react-native/docs/safeareaview)).
 > **Note**. iOS only.
 
 This component wraps the `<RootNavigator />` by default within `App.js`. It is also set to check for iPhone X specifically but can be adjusted to any number of devices.
 
-### Props
+#### Props
 
 | Prop | Type | Default | Note |
 |---|---|---|---|
@@ -197,9 +208,11 @@ Like `npm start`, but also attempts to open your app on a connected Android devi
 
 #### `npm clean`
 
-**Configured for _yarn_ only**
+Clears Watchman, removes node modules and re-aquires.
 
-Clears Watchman, removes node modules, cleans yarn cache, and re-aquires node modules using yarn.
+#### `npmclean:yarn`
+
+Same as `npm clean` but also clears yarn cache and re-aquires node modules using yarn.
 
 #### `npm lint`
 
