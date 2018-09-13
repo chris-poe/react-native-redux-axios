@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Header } from 'react-navigation';
-import theme from '../theme';
+import { colors } from '../theme';
 
 const styles = {
   container: {
-    backgroundColor: theme.colors.white,
+    backgroundColor: colors.white,
   },
 };
 

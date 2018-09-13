@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera, Permissions } from 'expo';
 
 import Icon from './Icon';
-import theme from './theme';
+import { colors } from './theme';
 
 const styles = {
   row: {
@@ -61,7 +61,7 @@ export default class CameraExample extends Component {
               <Icon
                 name="ios-reverse-camera-outline"
                 size={40}
-                style={{ color: theme.colors.white, marginLeft: 15 }}
+                style={{ color: colors.white, marginLeft: 15 }}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -75,7 +75,7 @@ export default class CameraExample extends Component {
               <Icon
                 name="ios-radio-button-on-outline"
                 size={100}
-                style={{ color: theme.colors.white }}
+                style={{ color: colors.white }}
               />
             </TouchableOpacity>
           </View>

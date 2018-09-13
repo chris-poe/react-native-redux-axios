@@ -23,7 +23,7 @@ const colors = {
   white: '#fff',
   black: '#000',
   gray: '#929292',
-  medGray: '#ccc',
+  mediumGray: '#ccc',
   lightGray: '#dfdfdf',
   info: '#417dc1',
 };
@@ -35,4 +35,4 @@ const theme = {
   colors,
 };
 
-export default theme;
+export { debug, device, variables, colors, theme };

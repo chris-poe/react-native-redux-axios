@@ -6,7 +6,7 @@ import {
 import { HomeNavigator, HomeIcon } from './Home';
 import CameraNavigator from './Camera';
 
-import theme from '../components/modules/theme';
+import { colors } from '../components/modules/theme';
 
 const TabBarNavigator = createBottomTabNavigator(
   {
@@ -16,7 +16,7 @@ const TabBarNavigator = createBottomTabNavigator(
     initialRouteName: 'Home',
     navigationOptions: ({ navigation }) => HomeIcon,
     tabBarOptions: {
-      inactiveTintColor: theme.colors.medGray,
+      inactiveTintColor: colors.mediumGray,
       showIcon: true,
       showLabel: false,
       iconStyle: {
@@ -25,7 +25,7 @@ const TabBarNavigator = createBottomTabNavigator(
       },
       style: {
         height: 70,
-        backgroundColor: theme.colors.white,
+        backgroundColor: colors.white,
       },
     },
   }
