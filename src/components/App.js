@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SafeAreaView } from './modules/Layout';
+import { SafeAreaView } from './common/Layout';
 import RootNavigator from '../navigation/RootNavigator';
 import Landing from './screens/Landing';
 

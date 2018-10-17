@@ -6,7 +6,7 @@ import {
 import { HomeNavigator, HomeIcon } from './Home';
 import CameraNavigator from './Camera';
 
-import { colors } from '../components/modules/theme';
+import { colors } from '../components/common/theme';
 
 const TabBarNavigator = createBottomTabNavigator(
   {

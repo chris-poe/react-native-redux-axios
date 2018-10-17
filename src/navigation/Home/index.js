@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import Icon from '../../components/modules/Icon';
+import Icon from '../../components/common/Icon';
 
 import HomeScreen from '../../components/screens/Home';
 
