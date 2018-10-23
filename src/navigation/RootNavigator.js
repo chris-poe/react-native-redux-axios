@@ -39,6 +39,7 @@ const MainNavigator = createStackNavigator(
   {
     initialRouteName: 'Home',
     headerMode: 'none',
+    cardStyle: { shadowColor: 'transparent' },
   }
 );
 
@@ -48,6 +49,7 @@ const RootNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
+    cardStyle: { shadowColor: 'transparent' },
     mode: 'modal',
     navigationOptions: {
       gesturesEnabled: false,
