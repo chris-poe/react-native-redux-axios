@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import { Camera, Permissions } from 'expo';
+import { Camera as ExpoCamera, Permissions } from 'expo';
 
-import Icon from './Icon';
+import { IonIcon } from './Icon';
 import { colors } from './theme';
 
 const styles = {
@@ -17,10 +17,10 @@ const styles = {
   },
 };
 
-export default class CameraExample extends Component {
+export default class Camera extends Component {
   state = {
     hasCameraPermission: null,
-    type: Camera.Constants.Type.back,
+    type: ExpoCamera.Constants.Type.back,
   };
 
   async componentWillMount() {
@@ -31,9 +31,9 @@ export default class CameraExample extends Component {
   rotateCamera = () => {
     this.setState({
       type:
-        this.state.type === Camera.Constants.Type.back
-          ? Camera.Constants.Type.front
-          : Camera.Constants.Type.back,
+        this.state.type === ExpoCamera.Constants.Type.back
+          ? ExpoCamera.Constants.Type.front
+          : ExpoCamera.Constants.Type.back,
     });
   };
 
@@ -46,7 +46,7 @@ export default class CameraExample extends Component {
     }
     return (
       <View style={{ flex: 1 }}>
-        <Camera
+        <ExpoCamera
           style={{ flex: 1 }}
           type={this.state.type}
           ref={ref => {
@@ -58,7 +58,7 @@ export default class CameraExample extends Component {
               style={[styles.align, { flex: 0.125 }]}
               onPress={() => this.rotateCamera()}
             >
-              <Icon
+              <IonIcon
                 name="ios-reverse-camera-outline"
                 size={40}
                 style={{ color: colors.white, marginLeft: 15 }}
@@ -72,14 +72,14 @@ export default class CameraExample extends Component {
                 }
               }}
             >
-              <Icon
+              <IonIcon
                 name="ios-radio-button-on-outline"
                 size={100}
                 style={{ color: colors.white }}
               />
             </TouchableOpacity>
           </View>
-        </Camera>
+        </ExpoCamera>
       </View>
     );
   }
