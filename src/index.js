@@ -1,4 +1,4 @@
-import Expo from 'expo';
+import * as Expo from 'expo';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
