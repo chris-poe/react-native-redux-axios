@@ -25,7 +25,6 @@
     "ios": "expo start --ios",
     "test": "jest",
     "clean": "rm -rf node_modules/ && npm install",
-    "clean:yarn": "yarn cache clean",
     "clean:watchman": "watchman watch-del-all && watchman shutdown-server",
     "lint": "eslint 'src/'",
     "lint:fix": "eslint --fix 'src/'",
