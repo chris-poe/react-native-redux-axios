@@ -1,8 +1,6 @@
 import * as Expo from 'expo';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-
-import RootNavigator from './navigation/RootNavigator';
 import App from './components/App';
 import store from './store';
 

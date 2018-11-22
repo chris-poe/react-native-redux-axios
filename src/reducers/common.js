@@ -1,9 +1,14 @@
-import { APP_LOAD } from '../constants/actionTypes';
+import actionTypes from '../actions/actionTypes';
 
-export default (state = {}, action) => {
+export default (
+  state = {
+    appLoaded: null,
+  },
+  action
+) => {
   switch (action.type) {
-    case APP_LOAD:
-      return { ...state, appLoaded: true };
+    case actionTypes.APP_LOAD:
+      return { ...state, appLoaded: action.payload };
     default:
       return state;
   }
