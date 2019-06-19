@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
+import { Container } from '../../common/Layout';
 
-class HomeScreen extends Component {
-  render() {
-    return null;
-  }
-}
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    flex: 1,
+    justifyContent: 'center',
+  },
+});
 
-export default connect()(HomeScreen);
+const HomeScreen = () => (
+  <Container style={styles.container}>
+    <Text>Get started in src/components/screens/Home</Text>
+  </Container>
+);
+
+export default HomeScreen;

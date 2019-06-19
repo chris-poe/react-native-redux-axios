@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Constants } from 'expo';
+import Constants from 'expo-constants';
 import Container from './Container';
 
 export default ({ ...props }) => {

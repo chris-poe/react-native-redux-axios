@@ -1,19 +1,20 @@
-import { createStore, applyMiddleware } from 'redux';
-import axios from 'axios';
-import axiosMiddleware from 'redux-axios-middleware';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+import reducers from './reducers';
 
-import config from '../config';
-import reducer from '../reducers';
+const middleware = [thunk];
 
-const client = axios.create(config.api);
+if (__DEV__) {
+  const logger = createLogger({
+    collapsed: true,
+  });
 
-const getMiddleware = () => {
-  if (__DEV__) {
-    return applyMiddleware(axiosMiddleware(client), thunk, logger);
-  }
-  return applyMiddleware(axiosMiddleware(client), thunk);
-};
+  middleware.push(logger);
+}
 
-export default createStore(reducer, getMiddleware());
+const rootReducer = combineReducers({
+  ...reducers,
+});
+
+export default createStore(rootReducer, applyMiddleware(...middleware));

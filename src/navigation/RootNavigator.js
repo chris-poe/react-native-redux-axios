@@ -1,10 +1,10 @@
 import {
+  createAppContainer,
   createBottomTabNavigator,
   createStackNavigator,
 } from 'react-navigation';
 
 import { HomeNavigator, HomeIcon } from './Home';
-import CameraNavigator from './Camera';
 
 import { colors } from '../components/common/theme';
 
@@ -14,7 +14,7 @@ const TabBarNavigator = createBottomTabNavigator(
   },
   {
     initialRouteName: 'Home',
-    navigationOptions: ({ navigation }) => HomeIcon,
+    defaultNavigationOptions: () => HomeIcon,
     tabBarOptions: {
       inactiveTintColor: colors.mediumGray,
       showIcon: true,
@@ -34,7 +34,6 @@ const TabBarNavigator = createBottomTabNavigator(
 const MainNavigator = createStackNavigator(
   {
     Home: { screen: TabBarNavigator },
-    Camera: { screen: CameraNavigator },
   },
   {
     initialRouteName: 'Home',
@@ -43,18 +42,20 @@ const MainNavigator = createStackNavigator(
   }
 );
 
-const RootNavigator = createStackNavigator(
-  {
-    Main: { screen: MainNavigator },
-  },
-  {
-    headerMode: 'none',
-    cardStyle: { shadowColor: 'transparent' },
-    mode: 'modal',
-    navigationOptions: {
-      gesturesEnabled: false,
+const RootNavigator = createAppContainer(
+  createStackNavigator(
+    {
+      Main: { screen: MainNavigator },
     },
-  }
+    {
+      headerMode: 'none',
+      cardStyle: { shadowColor: 'transparent' },
+      mode: 'modal',
+      defaultNavigationOptions: {
+        gesturesEnabled: false,
+      },
+    }
+  )
 );
 
 export default RootNavigator;

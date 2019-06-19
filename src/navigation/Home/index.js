@@ -24,7 +24,7 @@ const HomeNavigator = createStackNavigator({
 
 const HomeIcon = {
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="ios-home-outline" size={40} color={tintColor} />
+    <Icon name="ios-home" size={40} color={tintColor} />
   ),
 };
 

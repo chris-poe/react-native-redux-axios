@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
-import { Camera as ExpoCamera, Permissions } from 'expo';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import * as Permissions from 'expo-permissions';
+import { Camera as ExpoCamera } from 'expo-camera';
 
 import { IonIcon } from './Icon';
 import { colors } from './theme';
 
-const styles = {
+const styles = StyleSheet.create({
+  align: {
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+  },
   row: {
-    flex: 1,
     backgroundColor: 'transparent',
+    flex: 1,
     flexDirection: 'row',
   },
-  align: {
-    alignSelf: 'flex-end',
-    alignItems: 'center',
-  },
-};
+});
 
 export default class Camera extends Component {
   state = {
@@ -68,7 +69,7 @@ export default class Camera extends Component {
               style={[styles.align, { flex: 0.75 }]}
               onPress={async () => {
                 if (this.camera) {
-                  const photo = await this.camera.takePictureAsync();
+                  await this.camera.takePictureAsync();
                 }
               }}
             >

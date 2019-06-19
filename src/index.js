@@ -1,17 +1,11 @@
-import * as Expo from 'expo';
-import React, { Component } from 'react';
+import React from 'react';
+import { registerRootComponent } from 'expo';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import store from './store';
 
-export default Expo.registerRootComponent(
-  class extends Component {
-    render() {
-      return (
-        <Provider store={store}>
-          <App />
-        </Provider>
-      );
-    }
-  }
-);
+export default registerRootComponent(() => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+));

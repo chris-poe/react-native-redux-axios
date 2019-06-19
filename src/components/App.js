@@ -1,34 +1,20 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { SafeAreaView } from './common/Layout';
 import RootNavigator from '../navigation/RootNavigator';
 import Landing from './screens/Landing';
-import { init } from '../actions/actionCreators/common';
-import actionTypes from '../actions/actionTypes';
+import init from '../store/actions/common';
 
-const mapStateToProps = state => ({
-  appLoaded: state.common.appLoaded,
-});
+const App = ({ dispatch }) => {
+  const [isAppReady, setAppState] = useState(false);
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    const { dispatch } = this.props;
-    dispatch(init()).then(() => {
-      dispatch({
-        type: actionTypes.APP_LOAD,
-        payload: true,
-      });
-    });
-  }
+  useEffect(() => {
+    dispatch(init()).then(() => setAppState(true));
+  }, []);
 
-  render() {
-    return (
-      <SafeAreaView>
-        {this.props.appLoaded ? <RootNavigator /> : <Landing />}
-      </SafeAreaView>
-    );
-  }
-}
+  return (
+    <SafeAreaView>{isAppReady ? <RootNavigator /> : <Landing />}</SafeAreaView>
+  );
+};
 
-export default connect(mapStateToProps)(App);
+export default connect()(App);

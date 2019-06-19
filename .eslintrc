@@ -2,16 +2,35 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
-    "prettier"
+    "prettier",
+    "plugin:promise/recommended"
+  ],
+  "plugins": [
+    "react-native",
+    "promise",
+    "immutable"
   ],
   "rules": {
-    // disable mandatory .jsx
+    "comma-dangle": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/prop-types": 0,
+    "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    // disable prop-type validation
-    "react/prop-types": 0
+    "react/no-did-mount-set-state": 0,
+    "react/no-array-index-key": 0,
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-raw-text": 2,
+    "react-native/sort-styles": 2,
+    "immutable/no-mutation": 0,
+    "react/jsx-indent": 0
   },
   "globals": {
     "__DEV__": true,
     "navigator": true
+  },
+  "env": {
+    "react-native/react-native": true
   }
 }

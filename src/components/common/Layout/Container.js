@@ -1,28 +1,28 @@
 import React from 'react';
-import { View } from 'react-native';
-import { colors } from '../theme';
+import { StyleSheet, View } from 'react-native';
+import { colors, debug as debugView } from '../theme';
 
-const styles = {
-  container: {
-    backgroundColor: colors.white,
-  },
-  flex: {
-    flex: 1,
-  },
-  stretch: {
-    alignSelf: 'stretch',
-  },
-  padding: {
-    paddingHorizontal: 10,
-    paddingVertical: '2.5%',
-  },
+const styles = StyleSheet.create({
   centerHorizontal: {
     alignItems: 'center',
   },
   centerVertical: {
     justifyContent: 'center',
   },
-};
+  container: {
+    backgroundColor: colors.white,
+  },
+  flex: {
+    flex: 1,
+  },
+  padding: {
+    paddingHorizontal: 10,
+    paddingVertical: '2.5%',
+  },
+  stretch: {
+    alignSelf: 'stretch',
+  },
+});
 
 const Container = ({
   flex,
@@ -30,6 +30,7 @@ const Container = ({
   padding,
   centerHorizontal,
   centerVertical,
+  debug,
   margin,
   style,
   ...props
@@ -42,6 +43,7 @@ const Container = ({
       padding && styles.padding,
       centerHorizontal && styles.centerHorizontal,
       centerVertical && styles.centerVertical,
+      debug && debugView,
       margin,
       style,
     ]}

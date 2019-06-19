@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
-
+import { StyleSheet, Text } from 'react-native';
 import { BackgroundImage } from '../../common/Image';
 import ActivityIndicator from '../../common/Indicators/ActivityIndicator';
 import { colors } from '../../common/theme';
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end',
@@ -15,7 +14,7 @@ const styles = {
     color: colors.red,
     textAlign: 'center',
   },
-};
+});
 
 export default ({ error }) => (
   <BackgroundImage name="landing" style={styles.container}>

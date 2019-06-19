@@ -1,28 +1,28 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
-import Touchable from '../Touchable';
-import ActivityIndicator from '../Indicators/ActivityIndicator';
-import { colors, variables } from '../theme';
+import Touchable from './Touchable';
+import ActivityIndicator from './Indicators/ActivityIndicator';
+import { colors, variables } from './theme';
 
-const styles = {
+const styles = StyleSheet.create({
   button: {
-    height: 65,
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: colors.white,
+    borderColor: colors.mediumGray,
     borderStyle: 'solid',
     borderWidth: 1,
-    borderColor: colors.mediumGray,
-  },
-  text: {
-    fontSize: variables.fontSize + 2,
-    color: colors.gray,
+    height: 65,
+    justifyContent: 'center',
   },
   rounded: {
     borderRadius: 5,
   },
-};
+  text: {
+    color: colors.gray,
+    fontSize: variables.fontSize + 2,
+  },
+});
 
 const Button = ({
   text,
