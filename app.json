@@ -1,8 +1,15 @@
 {
   "expo": {
-  	"entryPoint": "./src/index.js",
+    "entryPoint": "./src/index.js",
     "icon": "./src/assets/images/app-icon.png",
-    "sdkVersion": "33.0.0",
-    "orientation": "portrait"
+    "sdkVersion": "36.0.0",
+    "orientation": "portrait",
+    "name": "react-native-redux-axios",
+    "slug": "react-native-redux-axios",
+    "version": "0.1.0",
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }

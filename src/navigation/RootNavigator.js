@@ -2,10 +2,8 @@ import {
   createAppContainer,
   createBottomTabNavigator,
   createStackNavigator,
-} from 'react-navigation';
-
+} from '@react-navigation/stack';
 import { HomeNavigator, HomeIcon } from './Home';
-
 import { colors } from '../components/common/theme';
 
 const TabBarNavigator = createBottomTabNavigator(
