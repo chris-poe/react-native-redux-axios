@@ -1,12 +1,25 @@
-import {
-  createAppContainer,
-  createBottomTabNavigator,
-  createStackNavigator,
-} from '@react-navigation/stack';
+import React from 'react';
+import { NavigationNativeContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { HomeNavigator, HomeIcon } from './Home';
 import { colors } from '../components/common/theme';
 
-const TabBarNavigator = createBottomTabNavigator(
+const Stack = createStackNavigator();
+
+const RootNavigator = () => (
+  <NavigationNativeContainer>
+    <Stack.Navigator
+      headerMode="none"
+      screenOptions={{
+        gestureEnabled: false,
+      }}
+    >
+      <Stack.Screen component={HomeNavigator} />
+    </Stack.Navigator>
+  </NavigationNativeContainer>
+);
+
+/* const TabBarNavigator = createBottomTabNavigator(
   {
     Home: { screen: HomeNavigator },
   },
@@ -54,6 +67,6 @@ const RootNavigator = createAppContainer(
       },
     }
   )
-);
+); */
 
 export default RootNavigator;

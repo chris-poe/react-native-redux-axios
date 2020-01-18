@@ -24,7 +24,8 @@
     "react-native/no-raw-text": 2,
     "react-native/sort-styles": 2,
     "immutable/no-mutation": 0,
-    "react/jsx-indent": 0
+    "react/jsx-indent": 0,
+    "react/jsx-props-no-spreading": 0
   },
   "globals": {
     "__DEV__": true,

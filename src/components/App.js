@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { SafeAreaView } from './common/Layout';
 import RootNavigator from '../navigation/RootNavigator';
-import Landing from './screens/Landing';
+import Splash from './screens/Splash';
 import init from '../store/actions/common';
 
 const App = ({ dispatch }) => {
@@ -13,7 +14,12 @@ const App = ({ dispatch }) => {
   }, []);
 
   return (
-    <SafeAreaView>{isAppReady ? <RootNavigator /> : <Landing />}</SafeAreaView>
+    <SafeAreaView>
+      <>
+        <StatusBar barStyle="dark-content" />
+        {isAppReady ? <RootNavigator /> : <Splash />}
+      </>
+    </SafeAreaView>
   );
 };
 
