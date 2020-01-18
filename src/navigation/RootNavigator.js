@@ -1,32 +1,18 @@
 import React from 'react';
 import { NavigationNativeContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HomeNavigator, HomeIcon } from './Home';
 import { colors } from '../components/common/theme';
 
+import { HomeNavigator, HomeIcon } from './Home';
+
+const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const RootNavigator = () => (
-  <NavigationNativeContainer>
-    <Stack.Navigator
-      headerMode="none"
-      screenOptions={{
-        gestureEnabled: false,
-      }}
-    >
-      <Stack.Screen component={HomeNavigator} />
-    </Stack.Navigator>
-  </NavigationNativeContainer>
-);
-
-/* const TabBarNavigator = createBottomTabNavigator(
-  {
-    Home: { screen: HomeNavigator },
-  },
-  {
-    initialRouteName: 'Home',
-    defaultNavigationOptions: () => HomeIcon,
-    tabBarOptions: {
+const TabNavigator = () => (
+  <Tab.Navigator
+    screenOptions={() => HomeIcon}
+    tabBarOptions={{
       inactiveTintColor: colors.mediumGray,
       showIcon: true,
       showLabel: false,
@@ -38,35 +24,23 @@ const RootNavigator = () => (
         height: 70,
         backgroundColor: colors.white,
       },
-    },
-  }
+    }}
+  >
+    <Tab.Screen component={HomeNavigator} />
+  </Tab.Navigator>
 );
 
-const MainNavigator = createStackNavigator(
-  {
-    Home: { screen: TabBarNavigator },
-  },
-  {
-    initialRouteName: 'Home',
-    headerMode: 'none',
-    cardStyle: { shadowColor: 'transparent' },
-  }
+const RootNavigator = () => (
+  <NavigationNativeContainer>
+    <Stack.Navigator
+      headerMode="none"
+      screenOptions={{
+        gestureEnabled: false,
+      }}
+    >
+      <Stack.Screen component={TabNavigator} />
+    </Stack.Navigator>
+  </NavigationNativeContainer>
 );
-
-const RootNavigator = createAppContainer(
-  createStackNavigator(
-    {
-      Main: { screen: MainNavigator },
-    },
-    {
-      headerMode: 'none',
-      cardStyle: { shadowColor: 'transparent' },
-      mode: 'modal',
-      defaultNavigationOptions: {
-        gesturesEnabled: false,
-      },
-    }
-  )
-); */
 
 export default RootNavigator;
